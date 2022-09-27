@@ -1,0 +1,11 @@
+<mat-toolbar color="primary"> 
+    <!-- <button mat-button routerLink="/">App</button> -->
+    <button mat-button *ngIf="auth.getisAuthicated" routerLink="/entries">Entries</button>
+    <button mat-button *ngIf="auth.getisAuthicated" routerLink="/new-entry">New Entry</button>
+    <span style="flex:1 1 auto"></span>
+    <button mat-button *ngIf="auth.getisAuthicated">Welcome {{auth.getUserName}}</button>
+    <button mat-button *ngIf="auth.getisAuthicated" (click)="auth.logout()">Logout</button>
+    <button mat-button *ngIf="!auth.getisAuthicated" routerLink="/user-register">Register User</button>
+    <button mat-button *ngIf="!auth.getisAuthicated" routerLink="/user-login">Login</button>
+
+</mat-toolbar>
